@@ -234,7 +234,8 @@ class pts_result_file_output
 
 		$placement = 1;
 		$i = 0;
-		foreach($result_file->get_result_objects() as $key => &$result_object)
+		$results = $result_file->get_result_objects();
+		foreach($results as $key => &$result_object)
 		{
 			$graph = pts_render::render_graph_process($result_object, $result_file, false, $extra_attributes);
 			if($graph == false)
